@@ -41,6 +41,49 @@ body {
     display: block;
 }
 
+/* --- NUEVOS ESTILOS PARA BOTONES --- */
+.botones-area {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.rojo { background-color: #ff4d4d; }
+.verde { background-color: #4CAF50; }
+
+#emoji-destino {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    z-index: 1000;
+}
+
+#mensaje-jamon {
+    display: none;
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+}
+
 @media (max-width: 768px) {
     .contenedor {
         flex-direction: column;
@@ -63,6 +106,13 @@ body {
     <div class="texto">
         VAS A SER COMIDO<br>
         POR EL OMAR
+        
+        <div class="botones-area">
+            <button class="btn rojo" onclick="mostrarDestino()">ACEPTAR TU DESTINO</button>
+            <button class="btn verde" onclick="mostrarJamon()">ALIMENTALE CON...</button>
+        </div>
+
+        <div id="mensaje-jamon">Mataste a Omar con una pata de jamón</div>
     </div>
 
     <div class="foto">
@@ -70,5 +120,25 @@ body {
     </div>
 </div>
 
+<div id="emoji-destino">☠️</div>
+
+<script>
+function mostrarDestino() {
+    document.getElementById('emoji-destino').style.display = 'block';
+    document.getElementById('mensaje-jamon').style.display = 'none';
+    
+    // Opcional: desaparece a los 3 segundos
+    setTimeout(() => {
+        document.getElementById('emoji-destino').style.display = 'none';
+    }, 3000);
+}
+
+function mostrarJamon() {
+    document.getElementById('mensaje-jamon').style.display = 'block';
+    document.getElementById('emoji-destino').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
+
