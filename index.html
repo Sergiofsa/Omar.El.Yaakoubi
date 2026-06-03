@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL OMAR</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.texto {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.foto {
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.foto img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .texto {
+        font-size: 2.5rem;
+    }
+
+    .foto {
+        width: 200px;
+        height: 240px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+    <div class="texto">
+        VAS A SER COMIDO<br>
+        POR EL OMAR
+    </div>
+
+    <div class="foto">
+        <img src="omar.jpg" alt="El Omar">
+    </div>
+</div>
+
+</body>
+</html>
